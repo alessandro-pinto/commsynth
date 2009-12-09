@@ -1,0 +1,88 @@
+/*
+ Copyright (c) 2007-2008 The Regents of the University of California.
+ All rights reserved.
+
+ Permission is hereby granted, without written agreement and without
+ license or royalty fees, to use, copy, modify, and distribute this
+ software and its documentation for any purpose, provided that the
+ above copyright notice and the following two paragraphs appear in all
+ copies of this software and that appropriate acknowledgments are made
+ to the research of the COSI group.
+
+ IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY
+ FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES
+ ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF
+ THE UNIVERSITY OF CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF
+ SUCH DAMAGE.
+
+ THE UNIVERSITY OF CALIFORNIA SPECIFICALLY DISCLAIMS ANY WARRANTIES,
+ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE
+ PROVIDED HEREUNDER IS ON AN "AS IS" BASIS, AND THE UNIVERSITY OF
+ CALIFORNIA HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES,
+ ENHANCEMENTS, OR MODIFICATIONS.
+
+ Author : Alessandro Pinto <apinto@eecs.berkeley.edu>
+ University of California, Berkeley
+ 545 Cory Hall, Berkeley, CA 94720
+ */
+#ifndef LIBRARIES_WIREDBAS_COMMON_LINK_H_
+#define LIBRARIES_WIREDBAS_COMMON_LINK_H_
+
+#include "Node.h"
+#include "InstantiableLink.h"
+#include "quantities/WiringPath.h"
+#include "quantities/CommoditySet.h"
+#include "models/onchipcommunication/common/AreaModel.h"
+#include "models/onchipcommunication/common/PowerModel.h"
+#include "models/onchipcommunication/common/DelayModel.h"
+
+namespace cosi {
+
+namespace library {
+
+namespace onchipcommunication {
+
+class Link : public cosi::library::onchipcommunication::InstantiableLink {
+protected:
+	cosi::models::onchipcommunication::LinkAreaModel* mAreaModel;
+	cosi::models::onchipcommunication::LinkPowerModel* mPowerModel;
+	cosi::models::onchipcommunication::LinkDelayModel* mDelayModel;
+
+public:
+	Link();
+	virtual ~Link();
+
+	void SetAreaModel(cosi::models::onchipcommunication::LinkAreaModel* pModel);
+
+	void
+			SetPowerModel(
+					cosi::models::onchipcommunication::LinkPowerModel* pModel);
+
+	void
+				SetDelayModel(
+						cosi::models::onchipcommunication::LinkDelayModel* pModel);
+
+
+	//COST METRICS
+	virtual double GetDeviceArea(WiringPath P) = 0;
+	virtual double GetWiringArea(WiringPath P) = 0;
+	virtual double GetStaticPower(WiringPath P) = 0;
+	virtual double GetDynamicPower(WiringPath P, CommoditySet pCommodities) = 0;
+
+
+	//PERFORMANCE METRICS
+	virtual double GetDelay(WiringPath P) = 0;
+
+	virtual std::string GetComponentName() = 0;
+	virtual std::string GetComponentType() = 0;
+
+};
+
+}
+
+}
+
+}
+
+#endif /*LINK_H_*/
