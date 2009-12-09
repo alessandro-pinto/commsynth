@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<Configuration>
+  <COSI version="CosiNoc 1.3" />
+  <TMP root="/tmp" />
+  <SYSTEMC root="/Users/apinto/Projects/cosi/src/releases/systemc-2.2.0"/>
+  <PARQUET root="/Users/apinto/Projects/cosi/src/releases/PARQUET_050330/Debug" exec="Parquet" />
+  <HMETIS  root="/Users/apinto/Projects/cosi/src/releases/hmetis-1.5-osx-i686" exec="hmetis" />
+  <KHMETIS  root="/Users/apinto/Projects/cosi/src/releases/hmetis-1.5-osx-i686" exec="khmetis" />
+  <SHMETIS  root="/Users/apinto/Projects/cosi/src/releases/hmetis-1.5-osx-i686" exec="shmetis" />
+  <TRACER root="/Developer/Simulator/GTKwave/bin" exec="gtkwave" />
+</Configuration>
+
+
