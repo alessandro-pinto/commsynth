@@ -1,0 +1,6 @@
+#summary This page can serve as a log for task "Introducing virtual channels"
+#labels Featured,Phase-Design
+
+= Adding Virtual Channels Support in COSI =
+
+Please use this wiki page to log your activities
