@@ -1,0 +1,3 @@
+# Introduction #
+
+The COSI project started at UC Berkeley and it is still hosted there. However, as some people around the planet started playing with it, Alessandro Pinto (who graduated in the meantime) did not really have time to help them. The google code project serves as a vehicle for collaboration among users. Moreover, the code is now public under svn and everybody in the committers list can check in changes and improvement (Alessandro plans to do it himself one day, when he will finally have time to do some technical work again).

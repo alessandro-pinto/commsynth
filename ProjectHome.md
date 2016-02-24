@@ -1,0 +1,1 @@
+This is the public repository for the COSI project, originally hosted at U.C. Berkeley (http://embedded.eecs.berkeley.edu/cosi). The mailing list of this project is at http://groups.google.com/group/commsynth, and the alias is commsynth@googlegroups.com.
